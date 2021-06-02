@@ -1,9 +1,9 @@
-import styles from "Navbar.module.scss"
+import styles from "./Navbar.module.scss"
 
 function Navbar() {
   return (
-    <div>
-      <h1>Test</h1>
+    <div className='xl:container xl:mx-auto'>
+      <h1 className={styles.header}>D // R</h1>
     </div>
   )
 }
