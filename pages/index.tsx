@@ -1,6 +1,8 @@
 import Head from "next/head"
 import Navbar from "../components/Navbar/Navbar"
 import styles from "../styles/Home.module.scss"
+import Typewriter from 'react-simple-typewriter'
+import 'react-simple-typewriter/dist/index.css'
 
 export default function Home() {
   return (
@@ -13,7 +15,18 @@ export default function Home() {
         </Head>
 
         <Navbar />
-        {/*<div className='body'></div>*/}
+        <div className={styles.body}>
+            <h1 className={styles.body__header}>Dimitri Rose:</h1>
+            <Typewriter
+                loop
+                cursor
+                cursorStyle='_'
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+                words={['Engineer', 'Designer', 'Mathematician']}
+            />
+        </div>
       </div>
     </div>
   )
