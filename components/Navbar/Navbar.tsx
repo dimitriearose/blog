@@ -10,9 +10,9 @@ function Navbar() {
       <div className=''>
         <ul className='flex'>
           <li className={styles.nav__link}><Link href='/'>About</Link></li>
-          <li className='nav__link'><Link href='/'>Portfolio</Link></li>
-          <li className='nav__link'><Link href='/'>Blog</Link></li>
-          <li className='nav__link'><Link href='/'>Contact</Link></li>
+          <li className={styles.nav__link}><Link href='/'>Portfolio</Link></li>
+          <li className={styles.nav__link}><Link href='/'>Blog</Link></li>
+          <li className={styles.nav__link}><Link href='/'>Contact</Link></li>
         </ul>
       </div>
     </div>

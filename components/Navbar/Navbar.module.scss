@@ -3,7 +3,7 @@
 @import "../../styles/variables";
 
 .header {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 32px;
   padding-top: 30px;
   color: $secondary-color;
@@ -14,6 +14,13 @@
   }
 }
 
-.nav {
-  padding-top: 30px;
-}
+  .nav__link {
+    color: $secondary-color;
+    transition: all 1s ease-in-out;
+    font-size: 18px;
+    padding-top: 30px;
+    padding-left: 20px;
+    &:hover {
+      color: $primary-color;
+    }
+  }
