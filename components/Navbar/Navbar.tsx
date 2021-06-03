@@ -7,11 +7,13 @@ function Navbar() {
       <h1 className={styles.header}>
         <Link href='/'>D // R</Link>
       </h1>
-      <div className='flex'>
-        <div className='nav__link'>About</div>
-        <div className='nav__link'>Portfolio</div>
-        <div className='nav__link'>Blog</div>
-        <div className='nav__link'>Contact</div>
+      <div className=''>
+        <ul className='flex'>
+          <li className={styles.nav__link}><Link href='/'>About</Link></li>
+          <li className='nav__link'><Link href='/'>Portfolio</Link></li>
+          <li className='nav__link'><Link href='/'>Blog</Link></li>
+          <li className='nav__link'><Link href='/'>Contact</Link></li>
+        </ul>
       </div>
     </div>
   )
