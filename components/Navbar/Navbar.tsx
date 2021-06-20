@@ -9,7 +9,7 @@ function Navbar() {
         <Link href='/'>D // R</Link>
       </h1>
       <div className=''>
-        <ul className='flex'>
+        <ul className={styles.navbar}>
           <li className={styles.nav__link}><Link href='/about'>About</Link></li>
           <li className={styles.nav__link}><Link href='/'>Portfolio</Link></li>
           <li className={styles.nav__link}><Link href='/'>Blog</Link></li>

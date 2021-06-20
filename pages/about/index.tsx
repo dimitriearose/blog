@@ -6,6 +6,9 @@ export default function About() {
         <div className={styles.wrapper}>
             <div className={styles.container}>
                 <Navbar />
+                <div>
+                    <h1>About Me:</h1>
+                </div>
             </div>
         </div>
     )
