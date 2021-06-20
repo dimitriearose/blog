@@ -3,6 +3,10 @@ import Navbar from "../components/Navbar/Navbar"
 import styles from "../styles/Home.module.scss"
 import Typewriter from 'react-simple-typewriter'
 import 'react-simple-typewriter/dist/index.css'
+import TwitterIcon from '@material-ui/icons/Twitter';
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import {Instagram} from "@material-ui/icons";
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 export default function Home() {
   return (
@@ -27,6 +31,20 @@ export default function Home() {
                 words={['Engineer', 'Designer', 'Mathematician']}
             />
         </div>
+          <div className="pt-24 m-auto">
+              <a href="https://twitter.com/dimitriearose" target="_blank" className={styles.icons__icon}>
+                  <TwitterIcon />
+              </a>
+              <a href="https://www.linkedin.com/in/dimitri-rose-962211188/" target="_blank" className={styles.icons__icon}>
+                  <LinkedInIcon />
+              </a>
+              <a href="https://instagram.com/dimitriearose" target="_blank" className={styles.icons__icon}>
+                  <Instagram />
+              </a>
+              <a href="https://github.com/dimitriearose" target="_blank" className={styles.icons__icon}>
+                  <GitHubIcon />
+              </a>
+          </div>
       </div>
     </div>
   )
