@@ -17,11 +17,16 @@
     padding-top: 80px;
     font-size: 50px;
     padding-bottom: 80px;
+    font-family:Absender;
   }
+
   span {
     color: $primary-color;
     font-size: 32px;
+    font-family:Absender;
+    user-select: none;
   }
+
 }
 
 .icons {

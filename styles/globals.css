@@ -14,3 +14,13 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: Absender;
+  src: url(../assets/absender1.woff);
+}
+
+
+::selection {
+  background-color: #db1f48;
+}
