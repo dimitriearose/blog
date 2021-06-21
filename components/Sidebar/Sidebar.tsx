@@ -32,12 +32,11 @@ const StyledSideBar = styled.div<Props>`
         font-size: 12px;
         color :var(--secondary-color);
 
-        &: hover {
-        color :var(--p-coarylor);
-
-        }
+       &:hover {
+           color: #000;
+       }   
     }
+
 `
 
 export default Sidebar
-im

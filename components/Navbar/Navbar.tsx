@@ -1,8 +1,14 @@
+import {useState} from 'react'
 import styles from "./Navbar.module.scss"
 import Link from "next/link"
+import Sidebar from '../Sidebar/Sidebar'
 
 function Navbar() {
-  return (
+
+  const [isSidebarOpen,setIsSidebarOpen] = useState<boolean>(true)
+
+  return ( 
+    <>
     <div className='xl:container xl:mx-auto flex justify-between'>
       <h1 className={styles.header}>
         <Link href='/'>D//R</Link>
@@ -19,6 +25,8 @@ function Navbar() {
         </div>
       </div>
     </div>
+       <Sidebar isOpen={isSidebarOpen} />
+    </>
   )
 }
 
