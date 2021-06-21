@@ -1,5 +1,4 @@
 import {useState,useRef} from 'react'
-import styles from "./Navbar.module.scss"
 import Link from "next/link"
 import Sidebar from '../Sidebar/Sidebar'
 import gsap from 'gsap'
@@ -15,14 +14,16 @@ function Navbar() {
   const lineTwoRef = useRef<HTMLDivElement>(null)
 
   const onMenuOpen =  () => {
-    if (isSidebarOpen){
-      setIsSidebarOpen(false)
-    }else {
+    if (!isSidebarOpen){
       setIsSidebarOpen(true)
-      
+        gsap.to(lineOneRef.current, 0.5, { rotate: 45, y: 4, background:'#050505' })
+        gsap.to(lineTwoRef.current, 0.5, { rotate: -45, y: -4, background:'#050505' })
+    }else {
+      setIsSidebarOpen(false)
+      gsap.to(lineOneRef.current, 0.5, { rotate: 0, y: 0, background:'#050505' })
+      gsap.to(lineTwoRef.current, 0.5, { rotate: 0, y: 0, background:'#050505' })
     }
   }
-
 
   return ( 
     <>
@@ -30,7 +31,7 @@ function Navbar() {
       <Header>
         <Link href='/'>D//R</Link>
       </Header>
-      <Menu aria-role='button' onClick={onMenuOpen}>
+      <Menu role='button' aria-describedBy='Button Which Opens Menu' onClick={onMenuOpen}>
         <div ref={lineOneRef}/>
         <div ref={lineTwoRef}/>
       </Menu>
@@ -58,7 +59,7 @@ const Header = styled.h2`
 const StyledNavbar = styled.div`
   display:flex;
   justify-content: space-between;
-  max-width:1366px;
+  max-width:1500px;
   align-items: center;
   padding: 2rem;
 `
@@ -70,7 +71,7 @@ cursor:pointer;
 
 div {
   height: 3px;
-  background-color: #000;
+  background-color: #050505;
   width: 30px;
 }
 

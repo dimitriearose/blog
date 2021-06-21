@@ -51,7 +51,7 @@ const StyledSideBar = styled.div<Props>`
     right: 0;
     top: 0;
     background-color: #fff;
-    padding: 2rem;
+    padding: 100px 30px 30px 30px;
     transition: 0.3s ease all;
     transform: ${(props) => props.isOpen ? 'translateX(0px)' : 'translateX(350px)' };
     display: flex;
