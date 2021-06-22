@@ -38,9 +38,25 @@ flex: 1;
 `
 
 const BottomSideBar = styled.div`
-a {
-    margin-right: 10px;
-}
+    a {
+        margin-right: 10px;
+        transition: 1s all ease-in-out;
+        
+    }
+    a:hover {
+        color: var(--primary-color);;
+    }
+    @media(max-width: 900px) {
+        a {
+            display: none;
+        }
+    }
+    @media(max-width: 500px) {
+        a {
+            display: block;
+        }
+    }
+
 `
 
 const StyledSideBar = styled.div<Props>`
@@ -70,9 +86,14 @@ const StyledSideBar = styled.div<Props>`
        }   
     }
 
+    @media(max-width: 900px) {
+        width: 280px;
+        transform: ${ (props) => props.isOpen ? 'translateX(155px)' : 'translateX(280px)' }
+    }
+
     @media(max-width: 500px) {
         width: 280px;
-        transform: ${ (props) => props.isOpen ? 'translateX(0px)' : 'translateX(280px)' }
+        transform: ${ (props) => props.isOpen ? 'translateX(150px)' : 'translateX(280px)' }
     }
     
 `

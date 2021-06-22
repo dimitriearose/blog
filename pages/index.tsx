@@ -53,7 +53,7 @@ window.removeEventListener('resize',onResize)
               />
             </TypeWriterContainer>
         </div>
-          <div className="pt-24 m-auto">
+          <ButtonContainer className="pt-24 m-auto">
               <a href="https://twitter.com/dimitriearose" target="_blank" rel='noreferrer noopener' className={styles.icons__icon}>
                   <TwitterIcon />
               </a>
@@ -66,7 +66,7 @@ window.removeEventListener('resize',onResize)
               <a href="https://github.com/dimitriearose" target="_blank" rel='noreferrer noopener' className={styles.icons__icon}>
                   <GitHubIcon />
               </a>
-          </div>
+          </ButtonContainer>
       </div>
     </div>
   )
@@ -74,9 +74,26 @@ window.removeEventListener('resize',onResize)
 
 
 const TypeWriterContainer = styled.div`
+@media(max-width: 900px) {
+  padding-left: 60px;
+}
+
 @media(max-width: 500px) {
  display:flex;
  justify-content:center;
- align-items:center;
+ align-items:flex-start;
+
 }
+`
+
+const ButtonContainer = styled.div`
+  a:hover {
+    color: var(--primary-color);;
+  }
+  @media(max-width: 900px) {
+    display: none;
+  }
+  @media(max-width: 500px) {
+    display: none;
+  }
 `
