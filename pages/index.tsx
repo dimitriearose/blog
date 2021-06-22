@@ -1,3 +1,4 @@
+import {useState,useEffect} from 'react'
 import Head from "next/head"
 import Navbar from "../components/Navbar/Navbar"
 import styles from "../styles/Home.module.scss"
@@ -8,7 +9,26 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import {Instagram} from "@material-ui/icons";
 import GitHubIcon from '@material-ui/icons/GitHub';
 
+import styled from 'styled-components'
+
 export default function Home() {
+  const [windowWidth,setWindowWidth] = useState<number>(0)
+
+const onResize = () => {
+setWindowWidth(window.innerWidth)
+}
+
+
+useEffect(() => {
+setWindowWidth(window.innerWidth)
+window.addEventListener('resize',onResize)
+
+
+return () => {
+window.removeEventListener('resize',onResize)
+}
+},[])
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -20,28 +40,30 @@ export default function Home() {
 
         <Navbar />
         <div className={styles.body}>
-            <h1 className={styles.body__header}>Dimitri Rose:</h1>
-            <Typewriter
-                loop
-                cursor
-                cursorStyle='_'
-                typeSpeed={70}
-                deleteSpeed={50}
-                delaySpeed={1000}
-                words={['Engineer', 'Designer', 'Mathematician']}
-            />
+            <h1 className={styles.body__header}>Dimitri Rose{`${windowWidth < 700 ? '' : ':'}`}</h1>
+            <TypeWriterContainer>
+              <Typewriter
+                  loop
+                  cursor
+                  cursorStyle='_'
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                  words={['Engineer', 'Designer', 'Mathematician']}
+              />
+            </TypeWriterContainer>
         </div>
           <div className="pt-24 m-auto">
-              <a href="https://twitter.com/dimitriearose" target="_blank" className={styles.icons__icon}>
+              <a href="https://twitter.com/dimitriearose" target="_blank" rel='noreferrer noopener' className={styles.icons__icon}>
                   <TwitterIcon />
               </a>
-              <a href="https://www.linkedin.com/in/dimitri-rose-962211188/" target="_blank" className={styles.icons__icon}>
+              <a href="https://www.linkedin.com/in/dimitri-rose-962211188/" rel='noreferrer noopener'  target="_blank" className={styles.icons__icon}>
                   <LinkedInIcon />
               </a>
-              <a href="https://instagram.com/dimitriearose" target="_blank" className={styles.icons__icon}>
+              <a href="https://instagram.com/dimitriearose" target="_blank" rel='noreferrer noopener'  className={styles.icons__icon}>
                   <Instagram />
               </a>
-              <a href="https://github.com/dimitriearose" target="_blank" className={styles.icons__icon}>
+              <a href="https://github.com/dimitriearose" target="_blank" rel='noreferrer noopener' className={styles.icons__icon}>
                   <GitHubIcon />
               </a>
           </div>
@@ -49,3 +71,12 @@ export default function Home() {
     </div>
   )
 }
+
+
+const TypeWriterContainer = styled.div`
+@media(max-width: 500px) {
+ display:flex;
+ justify-content:center;
+ align-items:center;
+}
+`

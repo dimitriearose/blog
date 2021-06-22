@@ -9,6 +9,10 @@
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+
+@media(max-width:500px) {
+  max-width: 90%;
+}
 }
 
 .body {
@@ -18,13 +22,25 @@
     font-size: 50px;
     padding-bottom: 80px;
     font-family:Absender;
+
+    @media(max-width: 500px) {
+      font-size: 40px;
+      text-align: center;
+    }
   }
+
+
 
   span {
     color: $primary-color;
     font-size: 32px;
     font-family:Absender;
     user-select: none;
+
+    @media(max-width: 500px) {
+      font-size: 28px;
+    }
+
   }
 
 }
@@ -33,5 +49,9 @@
   &__icon {
     padding-right: 20px;
     font-size: 1.5rem;
+
+    svg {
+     color:var(--secondary-color);
+    }
   }
 }

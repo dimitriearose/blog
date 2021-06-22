@@ -22,10 +22,10 @@ function Sidebar({isOpen}:Props) {
                 <Link href="/contact">Contact</Link>
             </TopSideBar>    
             <BottomSideBar>
-                <a target='_blank' href='' rel='noreferrer noopener'> <TwitterIcon/></a>
-                <a target="_blank"   href='' rel='noreferrer noopener'><LinkedInIcon/></a>
-                <a target="_blank"  href='' rel='noreferrer noopener'><Instagram/></a>
-                <a target="_blank"  href='' rel='noreferrer noopener'><GitHubIcon/></a>
+                <a target='_blank' href='https://twitter.com/dimitriearose' rel='noreferrer noopener'> <TwitterIcon/></a>
+                <a target="_blank" href='https://www.linkedin.com/in/dimitri-rose-962211188/' rel='noreferrer noopener'><LinkedInIcon/></a>
+                <a target="_blank" href='https://instagram.com/dimitriearose' rel='noreferrer noopener'><Instagram/></a>
+                <a target="_blank" href='https://github.com/dimitriearose' rel='noreferrer noopener'><GitHubIcon/></a>
             </BottomSideBar>        
         </StyledSideBar>
     )
@@ -56,6 +56,8 @@ const StyledSideBar = styled.div<Props>`
     transform: ${(props) => props.isOpen ? 'translateX(0px)' : 'translateX(350px)' };
     display: flex;
     flex-direction: column;
+    box-shadow: 0px 0px 5px rgba(0,0,0,.3);
+
 
     a {
         font-size: 20px;
@@ -68,6 +70,11 @@ const StyledSideBar = styled.div<Props>`
        }   
     }
 
+    @media(max-width: 500px) {
+        width: 280px;
+        transform: ${ (props) => props.isOpen ? 'translateX(0px)' : 'translateX(280px)' }
+    }
+    
 `
 
 export default Sidebar

@@ -1,59 +1,29 @@
-interface Screen {
-desktop:number
-
+export const ScreenWidths =  {
+    'large-desktop':'125em',
+    'desktop':'',
+    'mobile':'37.5em',
+    'ipad-pro':'64em',
+    'tablet':'52.125em',
+    'small-ipad':'48em',
+    'small-phone':'22.5em',
+    'laptop':'85.375em'
 }
 
-type Screens = 'large-desktop' | 'desktop' | 'mobile' | 'tablet' | 'small-mobile'
+export type Screens = 'large-desktop' | 'desktop' | 'mobile' | 'tablet' | 'small-mobile' | 'ipad-pro'
 
-const Responsive = (width:Screen):void => {
-    
+export const BreakPoint =(breakPoint:Screen):void => {
+    const mediaQuery =  `
+    @media (max-width: 25.875em) {
+    @content;
 }
-
+    `
+}
 
 
 // @mixin respond($breakpoint) {
-//     @if $breakpoint==galaxy-fold {
-//       @media (max-width: 17.5em) {
-//         @content;
-//       }
-//     }
   
-//     @if $breakpoint==phone {
-//       @media (max-width: 37.5em) {
-//         @content;
-//       }
-//     }
   
-//     @if $breakpoint==small-phone {
-//       @media (max-width: 22.5em) {
-//         @content;
-//       }
-//     }
-  
-//     @if $breakpoint==small-ipad {
-//       @media (max-width: 48em) {
-//         @content;
-//       }
-//     }
-  
-//     @if $breakpoint==tab-port {
-//       @media (max-width: 56.25em) {
-//         @content;
-//       }
-//     }
-  
-//     @if $breakpoint==tablet {
-//       @media (max-width: 52.125em) {
-//         @content;
-//       }
-//     }
-  
-//     @if $breakpoint==ipad-pro {
-//       @media (max-width: 64em) {
-//         @content;
-//       }
-//     }
-  
+
 //     @if $breakpoint==tablet-medium-landscape {
 //       @media (max-width: 64em) and (max-height: 48em) {
 //         @content;

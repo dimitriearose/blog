@@ -31,7 +31,7 @@ function Navbar() {
       <Header>
         <Link href='/'>D//R</Link>
       </Header>
-      <Menu role='button' aria-describedBy='Button Which Opens Menu' onClick={onMenuOpen}>
+      <Menu role='button' aria-describedby='Button Which Opens Menu' onClick={onMenuOpen}>
         <div ref={lineOneRef}/>
         <div ref={lineTwoRef}/>
       </Menu>
@@ -48,7 +48,6 @@ const Header = styled.h2`
   transition: all 1s ease-in-out;
   font-family: Absender;
   user-select:none;
-
 
   &:hover {
     color: var(--primary-color);
