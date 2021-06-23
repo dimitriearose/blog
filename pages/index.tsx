@@ -49,7 +49,7 @@ window.removeEventListener('resize',onResize)
                   typeSpeed={70}
                   deleteSpeed={50}
                   delaySpeed={1000}
-                  words={['Engineer', 'Designer', 'Mathematician']}
+                  words={['Engineer', 'Designer', 'Content Creator']}
               />
             </TypeWriterContainer>
         </div>
@@ -74,25 +74,41 @@ window.removeEventListener('resize',onResize)
 
 
 const TypeWriterContainer = styled.div`
-@media(max-width: 900px) {
+  @media(max-width: 1080px) {
+      padding-left: 60px;
+      padding-bottom: 30px;
+    }
+
+  @media(max-width: 900px) {
   padding-left: 60px;
 }
 
-@media(max-width: 500px) {
- display:flex;
- justify-content:center;
- align-items:flex-start;
-
-}
+  @media(max-width: 500px) {
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+ }
 `
 
 const ButtonContainer = styled.div`
   a:hover {
     color: var(--primary-color);;
   }
+  @media(max-width: 1080px) {
+      padding-left: 60px;
+      padding-bottom: 30px;
+  }
+
   @media(max-width: 900px) {
     display: none;
   }
+
+  @media(max-width: 850px) {
+    display: block;
+    margin: auto;
+    padding-left: 60px;
+  }
+
   @media(max-width: 500px) {
     display: none;
   }

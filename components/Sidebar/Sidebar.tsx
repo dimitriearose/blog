@@ -1,8 +1,5 @@
-import { useState } from 'react'
-import styles from './Sidebar.module.scss'
 import Link from 'next/link'
 import styled from 'styled-components'
-import MenuIcon from '@material-ui/icons/Menu';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import {Instagram} from "@material-ui/icons";
@@ -20,13 +17,13 @@ function Sidebar({isOpen}:Props) {
                 <Link href="/portfolio">Portfolio</Link>
                 <Link href="/blog">Blog</Link>
                 <Link href="/contact">Contact</Link>
-            </TopSideBar>    
+            </TopSideBar>
             <BottomSideBar>
                 <a target='_blank' href='https://twitter.com/dimitriearose' rel='noreferrer noopener'> <TwitterIcon/></a>
                 <a target="_blank" href='https://www.linkedin.com/in/dimitri-rose-962211188/' rel='noreferrer noopener'><LinkedInIcon/></a>
                 <a target="_blank" href='https://instagram.com/dimitriearose' rel='noreferrer noopener'><Instagram/></a>
                 <a target="_blank" href='https://github.com/dimitriearose' rel='noreferrer noopener'><GitHubIcon/></a>
-            </BottomSideBar>        
+            </BottomSideBar>
         </StyledSideBar>
     )
 }
@@ -72,7 +69,7 @@ const StyledSideBar = styled.div<Props>`
     transform: ${(props) => props.isOpen ? 'translateX(0px)' : 'translateX(350px)' };
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 0px 5px rgba(0,0,0,.3);
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
 
 
     a {
@@ -84,6 +81,11 @@ const StyledSideBar = styled.div<Props>`
        &:hover {
         color :var(--primary-color);;
        }   
+    }
+
+    @media(max-width: 1080px) {
+        width: 280px;
+        transform: ${ (props) => props.isOpen ? 'translateX(80px)' : 'translateX(280px)' }
     }
 
     @media(max-width: 900px) {

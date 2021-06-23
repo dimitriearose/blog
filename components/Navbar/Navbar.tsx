@@ -2,7 +2,6 @@ import {useState,useRef} from 'react'
 import Link from "next/link"
 import Sidebar from '../Sidebar/Sidebar'
 import gsap from 'gsap'
-
 import styled from 'styled-components'
 
 
@@ -25,7 +24,7 @@ function Navbar() {
     }
   }
 
-  return ( 
+  return (
     <>
     <StyledNavbar>
       <Header>
@@ -42,11 +41,10 @@ function Navbar() {
 }
 
 const Header = styled.h2`
-  font-family: "Roboto", sans-serif;
+  font-family: Absender,sans-serif;
   font-size: 32px;
   color: var(--secondary-color);
   transition: all 1s ease-in-out;
-  font-family: Absender;
   user-select:none;
 
   &:hover {
@@ -67,6 +65,10 @@ const Menu = styled.div`
 max-height: 30px;
 z-index: 10000;
 cursor:pointer;
+
+@media(max-width: 1080px) {
+      margin-right: 80px;
+  }
 
 div {
   height: 3px;
