@@ -28,6 +28,7 @@ function Sidebar({isOpen}:Props) {
     )
 }
 
+
 const TopSideBar = styled.div`
 display: flex;
 flex-direction: column;
@@ -37,17 +38,19 @@ flex: 1;
 const BottomSideBar = styled.div`
     a {
         margin-right: 10px;
-        transition: 1s all ease-in-out;
-        
+        transition: 1s all ease-in-out;   
     }
+
     a:hover {
         color: var(--primary-color);;
     }
+
     @media(max-width: 900px) {
         a {
             display: none;
         }
     }
+
     @media(max-width: 500px) {
         a {
             display: block;
@@ -71,7 +74,6 @@ const StyledSideBar = styled.div<Props>`
     flex-direction: column;
     box-shadow: 0 0 5px rgba(0,0,0,.3);
 
-
     a {
         font-size: 20px;
         color :var(--secondary-color);
@@ -92,6 +94,13 @@ const StyledSideBar = styled.div<Props>`
         width: 280px;
         transform: ${ (props) => props.isOpen ? 'translateX(155px)' : 'translateX(280px)' }
     }
+
+    
+    @media(max-width: 720px) {
+        width: 340px;
+        transform: ${ (props) => props.isOpen ? 'translateX(155px)' : 'translateX(340px)' }
+    }
+
 
     @media(max-width: 500px) {
         width: 280px;

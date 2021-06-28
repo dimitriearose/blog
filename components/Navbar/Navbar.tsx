@@ -50,7 +50,6 @@ const Header = styled.h2`
   &:hover {
     color: var(--primary-color);
   }
-
 `
 
 const StyledNavbar = styled.div`
@@ -67,19 +66,27 @@ z-index: 10000;
 cursor:pointer;
 
 @media(max-width: 1080px) {
-      margin-right: 80px;
-  }
+    margin-right: 80px;
+}
+
+@media(max-width: 900px) {
+    margin-right: 20px;
+}
+
+@media(max-width: 800px) {
+    margin-right: 80px;
+}
 
 div {
   height: 3px;
   background-color: #050505;
   width: 30px;
+
 }
 
 div:first-of-type {
-  margin-bottom:5px;
+  margin-bottom: 5px;
 }
-
 `
 
 export default Navbar
