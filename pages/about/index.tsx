@@ -16,7 +16,7 @@ export default function About() {
 }
 
 const   Wrapper = styled.div`
-background: var(--grey-color);~
+background: var(--grey-color);
 `
 const Container = styled.div`
 max-width: 1000px;
