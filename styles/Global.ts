@@ -15,6 +15,7 @@ const Style = createGlobalStyle`
     font-family: Absender, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     }
+    background: #CDCDCD;
 
     a {
     color: inherit;
