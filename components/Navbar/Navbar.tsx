@@ -74,7 +74,7 @@ cursor:pointer;
 }
 
 @media(max-width: 800px) {
-    margin-right: 80px;
+    margin-right: 20px;
 }
 
 div {

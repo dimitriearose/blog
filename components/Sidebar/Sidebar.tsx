@@ -53,7 +53,7 @@ const BottomSideBar = styled.div`
 
     @media(max-width: 500px) {
         a {
-            display: block;
+            display: none;
         }
     }
 

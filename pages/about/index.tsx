@@ -23,6 +23,10 @@ max-width: 1000px;
 margin-left: auto;
 margin-right: auto;
 min-height: 100vh;
+@media(max-width: 900px) {
+    padding-left: 20px;
+    padding-right: 20px;
+}
 `
 
 const Header = styled.h1`
@@ -30,6 +34,7 @@ font-family: Absender, sans-serif;
 font-size: 40px;
 text-align: center;
 color: var(--primary-color);
+
 `
 
 const Paragraph = styled.p`
@@ -37,4 +42,8 @@ font-family: Absender, sans-serif;
 color: var(--secondary-color);
 font-size: 24px;
 margin-top: 20px;
+@media(max-width: 900px) {
+    font-size: 18px;
+    line-height: 1.75;
+}
 `
