@@ -34,7 +34,6 @@ font-family: Absender, sans-serif;
 font-size: 40px;
 text-align: center;
 color: var(--primary-color);
-
 `
 
 const Paragraph = styled.p`
