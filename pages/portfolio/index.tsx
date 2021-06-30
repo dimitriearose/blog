@@ -1,5 +1,4 @@
 import {useEffect, useState} from 'react'
-import { GetStaticProps } from 'next'
 import Navbar from '../../components/Navbar/Navbar'
 import styled from 'styled-components'
 
@@ -10,21 +9,24 @@ const client = require('contentful').createClient({
 
 function Index() {
     async function fetchEntries() {
-        const entries = await client.getEntries()
+        const entries = await client.getEntries({
+            'content_type': 'portfolio'
+
+        })
         if (entries.items) {
-            console.log(entries.items)
             return entries.items
-        } 
+        }
       }
-    
+
       const [posts, setPosts] = useState([])
-    
+
       useEffect(() => {
         async function getPosts() {
           const allPosts = await fetchEntries()
+          //@ts-ignore
           setPosts([...allPosts])
         }
-        getPosts()
+        getPosts().then(() => console.log('loaded posts') )
         console.log(posts)
     }, [])
     return (
