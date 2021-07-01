@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import Post from '../../components/Post/Post'
+import Link from 'next/link'
 import styled from 'styled-components'
 
 const client = require('contentful').createClient({
@@ -11,7 +12,8 @@ const client = require('contentful').createClient({
 function Index() {
     async function fetchEntries() {
         const entries = await client.getEntries({
-            'content_type': 'portfolio'
+            'content_type': 'portfolio',
+            'limit': 3
 
         })
         if (entries.items) {
@@ -36,12 +38,29 @@ function Index() {
             <Container>
                 <Navbar />
                 <Header>My Recent Work:</Header>
-                <Post
-                    name="weBlack"
-                    image="https://avatars.githubusercontent.com/u/60557916?v=4"
-                    description="This is a social media site I am currently working on."
-                    href={`/portfolio/test`}
-                />
+                <PostContainer>
+                    <Post
+                        name="weBlack"
+                        image="https://avatars.githubusercontent.com/u/60557916?v=4"
+                        description="This is a social media site I am currently working on."
+                        href={`/portfolio/test`}
+                    />
+                    <Post
+                        name="weBlack"
+                        image="https://avatars.githubusercontent.com/u/60557916?v=4"
+                        description="This is a social media site I am currently working on."
+                        href={`/portfolio/test`}
+                    />
+                    <Post
+                        name="weBlack"
+                        image="https://avatars.githubusercontent.com/u/60557916?v=4"
+                        description="This is a social media site I am currently working on."
+                        href={`/portfolio/test`}
+                    />
+                </PostContainer>
+                <SeeAll>
+                    <Link href='/portfolio/all'>See All My Work</Link>
+                </SeeAll>
             </Container>
         </Wrapper>
     )
@@ -65,7 +84,18 @@ const Header = styled.h1`
 font-family: Absender, sans-serif;
 font-size: 40px;
 text-align: center;
+  padding-bottom: 30px;
 color: var(--primary-color);
+`
+
+const PostContainer = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto ;
+`
+
+const SeeAll = styled.button`
+    
 `
 
 export default Index

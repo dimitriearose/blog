@@ -12,17 +12,21 @@ export default function Post({name, image, description, href}) {
                 <Header>{name}</Header>
                 <hr />
                 <Description>{description}</Description>
-                <Link href={href}>See More</Link>
+                <Button>
+                    <Link href={href}>See More</Link>
+                </Button>
             </Bottom>
         </Container>
     )
 }
 
 const Container = styled.div`
-  height: 700px;
-  width: 30%;
+  height: 50%;
+  width: 300px;
   display: flex;
   flex-direction: column;
+  margin-right: 20px;
+  margin-bottom: 20px;
   @media(max-width: 900px) {
     width: 70%;
     margin: auto;
@@ -47,7 +51,20 @@ const Bottom = styled.div`
   background: #fff;
 `
 
-const Description = styled.div`
+const Button = styled.button`
+  padding-left: 10px;
+  color: var(--primary-color);
+  a {
+    text-decoration: underline;
+    transition: ease-in 0.5s;
+    font-size: 20px;
+  }
+  a:hover {
+    color: var(--secondary-color);
+  }
+`
+
+const Description = styled.p`
   color: var(--secondary-color);
   padding-left: 10px;  
 `
