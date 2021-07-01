@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
 import Navbar from '../../components/Navbar/Navbar'
+import Post from '../../components/Post/Post'
 import styled from 'styled-components'
 
 const client = require('contentful').createClient({
@@ -25,15 +26,22 @@ function Index() {
           const allPosts = await fetchEntries()
           //@ts-ignore
           setPosts([...allPosts])
+            console.log(allPosts)
         }
         getPosts().then(() => console.log('loaded posts') )
-        console.log(posts)
     }, [])
+
     return (
         <Wrapper>
             <Container>
                 <Navbar />
                 <Header>My Recent Work:</Header>
+                <Post
+                    name="weBlack"
+                    image="https://avatars.githubusercontent.com/u/60557916?v=4"
+                    description="This is a social media site I am currently working on."
+                    href={`/portfolio/test`}
+                />
             </Container>
         </Wrapper>
     )
