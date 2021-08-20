@@ -15,7 +15,7 @@
     "@types/nprogress": "^0.2.0",
     "@types/react-burger-menu": "^2.8.0",
     "babel-plugin-react-css-modules": "^5.2.6",
-    "contentful": "^8.4.2",
+    "contentful": "^8.5.0",
     "gsap": "^3.7.0",
     "i": "^0.3.6",
     "next": "10.2.3",
