@@ -16,7 +16,7 @@ function Index() {
       limit: 3,
     })
     if (entries.items) {
-      console.log(entries.items[0].fields.title)
+      // console.log(entries.items[0].fields.title)
       return entries.items
     }
   }
@@ -36,7 +36,7 @@ function Index() {
   }, [])
 
   posts.forEach((post: any) => {
-    console.log(post.fields.title)
+    console.log(post.fields)
   })
 
   return (
@@ -45,27 +45,24 @@ function Index() {
         <Navbar />
         <Header>My Recent Work:</Header>
         <PostContainer>
-          <Post
-            name='weBlack'
-            image='https://avatars.githubusercontent.com/u/60557916?v=4'
-            description='This is a social media site I am currently working on.'
-            href={`/portfolio/test`}
-          />
-          {/* <Post
-                        name="weBlack"
-                        image="https://avatars.githubusercontent.com/u/60557916?v=4"
-                        description="This is a social media site I am currently working on."
-                        href={`/portfolio/test`}
-                    />
-                    <Post
-                        name="weBlack"
-                        image="https://avatars.githubusercontent.com/u/60557916?v=4"
-                        description="This is a social media site I am currently working on."
-                        href={`/portfolio/test`}
-                    /> */}
+          {posts.map((post) => {
+            return (
+              <>
+                <Post
+                  key={post.fields.title}
+                  name={post.fields.title}
+                  image={post.fields.image.fields.file.url}
+                  description={
+                    post.fields.description.content[0].content[0].value
+                  }
+                  href={"/portfolio/test"}
+                />
+              </>
+            )
+          })}
         </PostContainer>
         <SeeAll>
-          <Link href='/portfolio/all'>See All My Work</Link>
+          {/* <Link href='/portfolio/all'>See All My Work</Link> */}
         </SeeAll>
       </Container>
     </Wrapper>
@@ -92,12 +89,18 @@ const Header = styled.h1`
   text-align: center;
   padding-bottom: 30px;
   color: var(--primary-color);
+  @media (max-width: 900px) {
+    padding-bottom: 10px;
+  }
 `
 
 const PostContainer = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: auto auto auto;
+  @media (max-width: 900px) {
+    grid-template-columns: auto;
+  }
 `
 
 const SeeAll = styled.button``

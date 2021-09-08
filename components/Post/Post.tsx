@@ -1,23 +1,23 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 import Link from "next/link"
 
 // @ts-ignore
-export default function Post({name, image, description, href}) {
-    return(
-        <Container>
-            <Top>
-                <Image src={image} />
-            </Top>
-            <Bottom>
-                <Header>{name}</Header>
-                <hr />
-                <Description>{description}</Description>
-                <Button>
-                    <Link href={href}>See More</Link>
-                </Button>
-            </Bottom>
-        </Container>
-    )
+export default function Post({ name, image, description, href }) {
+  return (
+    <Container>
+      <Top>
+        <Image src={image} />
+      </Top>
+      <Bottom>
+        <Header>{name}</Header>
+        <hr />
+        <Description>{description}</Description>
+        <Button>
+          <Link href={href}>See More</Link>
+        </Button>
+      </Bottom>
+    </Container>
+  )
 }
 
 const Container = styled.div`
@@ -27,14 +27,14 @@ const Container = styled.div`
   flex-direction: column;
   margin-right: 20px;
   margin-bottom: 20px;
-  @media(max-width: 900px) {
+  @media (max-width: 900px) {
     width: 70%;
-    margin: auto;
+    height: 20%;
+    margin: 0 auto;
+    margin-bottom: 20px;
   }
 `
-const Top = styled.div`
-    
-`
+const Top = styled.div``
 
 const Image = styled.img`
   height: 300px;
@@ -66,5 +66,5 @@ const Button = styled.button`
 
 const Description = styled.p`
   color: var(--secondary-color);
-  padding-left: 10px;  
+  padding-left: 10px;
 `
